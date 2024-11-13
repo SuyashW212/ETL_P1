@@ -47,7 +47,7 @@ def add():
     cur = mysql.cursor() #create a connection to the SQL instance
     s='''INSERT INTO students(studentName, email) VALUES(?,?);'''
     app.logger.info(s)
-    cur.execute(s,(name,email))
+    cur.execute(s,name,email)
     mysql.commit()
   else:
     return render_template('add.html')
